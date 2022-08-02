@@ -1,4 +1,4 @@
-import internal from 'stream';
+import config from './config.json';
 import { Telegraf } from 'telegraf';
 import { loadWordsToGuess, getRandomWord } from './loaders/loadWordsToGuess';
 import { loadWordsToVerify, verifyWord } from './loaders/loadWordsToVerify';
@@ -8,7 +8,7 @@ import {
   ValidationResult
 } from './validators/validateSquares';
 
-const bot = new Telegraf('');
+const bot = new Telegraf(config.token);
 bot.start((ctx) => ctx.reply('Wyrazle'));
 bot.help((ctx) => ctx.reply('/nowagra => zaczyna gre'));
 // bot.on('sticker', (ctx) => ctx.reply('👍'))
