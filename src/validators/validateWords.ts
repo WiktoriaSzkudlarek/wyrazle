@@ -11,7 +11,10 @@ export const validateWords = (correctWord: string, guessedWord: string) => {
 
   guessedWordAsArray.forEach((letter, index) => {
     const letterPosition = correctWordAsArray.indexOf(letter);
-    if (guessedWordAsArray[letterPosition] === letter) {
+    if (
+      guessedWordAsArray[letterPosition] === letter &&
+      letterPosition === index
+    ) {
       guessedWordAsArray[index] = '';
       correctWordAsArray[letterPosition] = '';
       resultArray[index] = '🟩';
