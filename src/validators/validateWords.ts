@@ -26,7 +26,7 @@ export const validateWords = (correctWord: string, guessedWord: string) => {
     if (resultArray[index] === '🟩') {
       return;
     }
-    if (letterPosition > 0) {
+    if (letterPosition !== -1) {
       guessedWordAsArray[index] = '';
       correctWordAsArray[letterPosition] = '';
       resultArray[index] = '🟨';

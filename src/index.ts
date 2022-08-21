@@ -66,7 +66,6 @@ bot.hears('/nowagra', ctx => {
 bot.on('message', ctx => {
   const usersWord =
     ctx.webAppData?.data.text() ?? ctx.message.text?.trim().toLowerCase();
-  console.log(ctx.webAppData?.data?.text());
   if (!usersWord) return;
   const wordToGuess = gameStates[ctx.message.chat.id]?.wordToGuess;
 
